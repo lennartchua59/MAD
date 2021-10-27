@@ -39,22 +39,23 @@
              }
         };
         var Mycourse = [];
-    Mycourse[0] = new SpDiploma('SpDip in WebDevelopment', 'WAD');
-    Mycourse[1] = new SpDiploma('SpDip in AI','python');
-    Mycourse[2] = new SpDiploma('SpDip in Media', 'Unity');
-    var dipSelect = document.gettlementById("dip-select");
-    dipSelect.options.length = 0;
-    for (index in Mycourse) {
-    dipSelect.options[dipSelect.options.length] = new Option (Mycourse[index].dip, index);
-    }
-    var dispresult = document.gettlementById("result");
     
-    var result = dipselect.selectedIndex;
-    document.getElementById('dip-select').addEventListener('change',function(e){
-        result = this. value;
-        console.log('You selected: ',this.value);
-        document.gettlementById("result") .innerHTML = Mycourse[result] .show() ;
-    });
+        Mycourse[0] = new SpDiploma('SpDip in WebDevelopment', 'WAD');
+        Mycourse[1] = new SpDiploma('SpDip in AI','python');
+        Mycourse[2] = new SpDiploma('SpDip in Media', 'Unity');
+        var dipSelect = document.gettlementById("dip-select");
+        dipSelect.options.length = 0;
+        for (index in Mycourse) {
+        dipSelect.options[dipSelect.options.length] = new Option (Mycourse[index].dip, index);
+        }
+        var dispresult = document.gettlementById("result");
+    
+        var result = dipselect.selectedIndex;
+        document.getElementById('dip-select').addEventListener('change',function(e){
+            result = this. value;
+            console.log('You selected: ',this.value);
+            document.gettlementById("result") .innerHTML = Mycourse[result] .show() ;
+        });
         
     
     
