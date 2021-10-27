@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Diploma Course</h1>
+
+<select id="course-select">
+
+</select>
+    
+<br>
+<br>
+<h1>Module</h1>
+<p id="result">
+
+</p>
+<script>
+    class Course {
+        constructor(modulename){
+            this.module = modulename;
+        }
+        taking() {
+            return "i'm taking" + this.module + 'module';
+        }
+        module() {
+            return this.module;
+        }
+    };
+        class SpDiploma extends Course {
+            constructor (spdip, modname){
+                super(spdip);
+                this.module = modname;
+
+            }
+            final() {
+                return this.taking + " It Will Award " + this.dip; 
+              }
+            dip(){
+                 return this.dip;
+             }
+        };
+        var Mycourse = [];
+    Mycourse[0] = new SpDiploma('SpDip in WebDevelopment', 'WAD');
+    Mycourse[1] = new SpDiploma('SpDip in AI','python');
+    Mycourse[2] = new SpDiploma('SpDip in Media', 'Unity');
+    var dipSelect = document.gettlementById("dip-select");
+    dipSelect.options.length = 0;
+    for (index in Mycourse) {
+    dipSelect.options[dipSelect.options.length] = new Option (Mycourse[index].dip, index);
+    }
+    var dispresult = document.gettlementById("result");
+    
+    var result = dipselect.selectedIndex;
+    document.getElementById('dip-select').addEventListener('change',function(e){
+        result = this. value;
+        console.log('You selected: ',this.value);
+        document.gettlementById("result") .innerHTML = Mycourse[result] .show() ;
+    });
+        
+    
+    
+</script>
+</body>
+</html>
